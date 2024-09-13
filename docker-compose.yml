@@ -1,0 +1,18 @@
+version: '3.9'
+
+services:
+  db:
+    container_name: djangoshop-db
+    image: postgres:15
+    restart: always
+    volumes:
+      - djangoshop_db:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: djangoshop
+      POSTGRES_USER: djangoshop
+      POSTGRES_PASSWORD: djangoshop
+    ports:
+      - "5433:5432"
+
+volumes:
+  djangoshop_db:
