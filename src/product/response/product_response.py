@@ -1,4 +1,5 @@
 from typing import List
+
 from ninja import Schema
 
 class ProductDetailResponse(Schema):
