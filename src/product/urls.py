@@ -40,5 +40,5 @@ def product_list_handler(request: HttpRequest, category_id: int | None = None):
 )
 def categories_list_handler(request: HttpRequest):
     return 200, response(
-        CategoryListResponse.build(categories=Category.objects.filter(parent=None))
+        CategoryListResponse.build(categories=Category.objects.filter(parent=None).prefetch_related("children"))
     )
